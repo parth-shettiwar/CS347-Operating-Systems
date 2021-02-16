@@ -1,0 +1,17 @@
+CS 347M : Lab2 System calls (with xv6)
+
+The code contains implementation of 2 system calls:  
+1)hello(): This system call was simply done by modifying the following files in xv6 codebase  
+a)syscall.c : Added sys_hello to the list of syscalls which does the mapping of system call number to the respective function.
+b)syscall.h : Defined a system call number (22) as SYS_hello
+c)usys.S : Added SYSCALL(hello) to put 22 in eax register, for system call handling  
+d)user.h : added declaration of user interface system call "hello".
+e)sys_proc.c : writing the sys_hello system call function
+
+2)trace():Again as before, the files are edited to add a sys_trace function in sysproc.h
+a) sys_proc.c : This contains our new sys_trace system call. using argint, we access the command line arguement mask, which tells which system calls to trace. We check its value and return -1 if its not 32,2, or 34. Else we set a process state variable called "mask" as the command line system call number to be traced.
+b)proc.h : We declare a new process state variable "mask" which contains the system call number to be traced.
+c)proc.c : In fork function, we set the child process mask variable as the parent process mask variable. This would ensure that child process also traces the same system calls as parent.  
+d)syscall.c : We manually check the value of system call number to be traced and print the desired output if required system call number is present in eax resgiter
+
+
