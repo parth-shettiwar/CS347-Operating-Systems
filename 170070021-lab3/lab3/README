@@ -1,0 +1,30 @@
+Directory contains following files:
+1)Ordering.c 
+2)Barrier.c
+3)Priority11.c
+4)Subset_Thread.c
+5)order
+6)barrier
+7)prior
+8)subset
+9)HonorCode.txt
+10)Report.pdf
+
+
+1,2,3,4 are codes and 5,6,7,8 are respective compiled programmes. All results and observations in Report.pdf
+
+For compilation
+Thread Ordering : gcc -pthread -o order Ordering.c  
+Barrier synchronization: gcc -pthread -o barrier Barrier.c
+Priority synchronization: ggcc -pthread -o prior Priority11.c
+Subset Number of Threads Execution: gcc -pthread -o subset Subset_Thread.c
+
+For Running the compiled programmes:
+Thread Ordering : ./order
+Barrier synchronization: ./barrier
+Priority synchronization: ./prior
+Subset Number of Threads Execution: ./subset
+
+What and how to give inputs for each programme written in Report.pdf. Kindly look under the images in report to see the type of input given for each programme.
+
+
